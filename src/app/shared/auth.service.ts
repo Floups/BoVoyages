@@ -7,6 +7,7 @@ import {VoyageurService} from './voyageur.service';
 })
 export class AuthService {
   private isAuth = false;
+  private id = null;
 
   constructor(private voyageurService: VoyageurService, private router: Router) {
   }
@@ -15,6 +16,7 @@ export class AuthService {
     this.voyageurService.getVoyageurs().subscribe(tab => tab.forEach(e => {
         this.isAuth = e.mail === n && e.password === p;
         if (this.isAuth) {
+          this.id = e.id;
           this.router.navigate(['album']);
         }
       }
@@ -28,5 +30,9 @@ export class AuthService {
 
   isAuthentified() {
     return this.isAuth;
+  }
+
+  getId() {
+    return this.id;
   }
 }

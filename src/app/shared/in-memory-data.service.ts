@@ -174,7 +174,7 @@ export class InMemoryDataService implements InMemoryDbService {
       mail: 'test',
       password: 'test'
     }];
-
-    return {formules, voyageurs};
+    const dossiers = [];
+    return {formules, voyageurs, dossiers};
   }
 }
