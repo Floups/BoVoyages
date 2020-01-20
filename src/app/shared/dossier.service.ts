@@ -27,4 +27,8 @@ export class DossierService {
     return this.httpClient.delete('api/dossiers/' + id);
   }
 
+  updateDossier(id, dossier){
+    return this.httpClient.put('api/dossiers/'+id,dossier);
+  }
+
 }

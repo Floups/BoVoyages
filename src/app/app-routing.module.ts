@@ -4,14 +4,17 @@ import {FormulesListeComponent} from './components/formules-liste/formules-liste
 import {FormuleComponent} from './components/formule/formule.component';
 import {LoginComponent} from './components/login/login.component';
 import { ReserverComponent } from './components/reserver/reserver.component';
+import { PaiementComponent } from './components/paiement/paiement.component';
 
 
 const routes: Routes = [
   {path: 'listeFormule', component: FormulesListeComponent},
   {path: 'formule/:id', component: FormuleComponent},
   {path: 'login', component: LoginComponent},
+  {path: 'paiement/:id', component: PaiementComponent},
   {path: 'reserver/:id', component: ReserverComponent},
   {path: '**', redirectTo: 'listeFormule'}
+
 
 
 ];

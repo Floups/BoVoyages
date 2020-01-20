@@ -1,5 +1,6 @@
 import {Voyageur} from './Voyageur';
 import {Formule} from './Formule';
+import { CarteBancaire } from './CarteBancaire';
 
 export class Dossier {
   static nbId = 0;
@@ -7,8 +8,8 @@ export class Dossier {
   numDossier: number;
   client: Voyageur;
   voyageurs: Voyageur[];
-  carteBancaire: string;
   formule: Formule;
+  carteBancaire: CarteBancaire;
 
 
   constructor(numDossier: number, client: Voyageur, voyageurs: Voyageur[], carteBancaire: string, formule: Formule) {

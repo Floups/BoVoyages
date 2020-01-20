@@ -1,0 +1,8 @@
+
+<form (ngSubmit)="onSubmit()" [formGroup]="CBForm">
+        <label>Nom </label><input type="text" formControlName="civilitenomDetenteur" />
+        <label>Numéro de carte </label><input type="text" formControlName="numero" />
+        <label>Date de validité </label><input type="date" formControlName="dateValidation" />
+        <label>Code secret </label><input type="text" formControlName="codeSecret" />
+    <button type="submit" >Confirmer l'achat</button>
+</form>

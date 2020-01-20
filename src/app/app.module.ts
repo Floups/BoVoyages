@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormuleComponent } from './components/formule/formule.component';
 import { ReserverComponent } from './components/reserver/reserver.component';
+import { PaiementComponent } from './components/paiement/paiement.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReserverComponent } from './components/reserver/reserver.component';
     LoginComponent,
     FormulesListeComponent,
     FormuleComponent,
-    ReserverComponent
+    ReserverComponent,
+    PaiementComponent
   ],
   imports: [
     BrowserModule,
