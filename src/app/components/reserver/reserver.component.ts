@@ -85,12 +85,6 @@ export class ReserverComponent implements OnInit {
         .subscribe(
           () => this.router.navigate(['/paiement'])
         );
-
-      const client = this.clientForm.value;
-      this.dossierService.createDossier(client)
-      .subscribe(
-        () => this.router.navigate(['/listeFormule'])
-      )
       
     }
   }
