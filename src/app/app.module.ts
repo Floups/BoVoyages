@@ -8,12 +8,14 @@ import { AppComponent } from './app.component';
 import { InMemoryDataService } from './shared/in-memory-data.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { VoyagesListeComponent } from './components/voyages-liste/voyages-liste.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    VoyagesListeComponent
   ],
   imports: [
     BrowserModule,
