@@ -4,6 +4,6 @@
     <div class="card-body" >
       <h5 class="card-title">{{formule.destination.region}}</h5>
       <p class="card-text">{{formule.destination.description}}</p>
-      <a href="#" class="btn btn-primary">Voir les offres</a>
+      <a [routerLink]="['/formule', formules.id]" class="btn btn-primary">Voir l'offre</a>
     </div>
   </div>

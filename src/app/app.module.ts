@@ -9,13 +9,15 @@ import { InMemoryDataService } from './shared/in-memory-data.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormulesListeComponent } from './components/formules-liste/formules-liste.component';
+import { FormuleComponent } from './components/formule/formule.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    FormulesListeComponent
+    FormulesListeComponent,
+    FormuleComponent
   ],
   imports: [
     BrowserModule,
