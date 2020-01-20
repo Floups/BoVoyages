@@ -10,8 +10,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormulesListeComponent } from './components/formules-liste/formules-liste.component';
 import { LoginComponent } from './components/login/login.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FormuleComponent } from './components/formule/formule.component';
+import { ReserverComponent } from './components/reserver/reserver.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +21,16 @@ import { FormuleComponent } from './components/formule/formule.component';
     FooterComponent,
     LoginComponent,
     FormulesListeComponent,
-    FormuleComponent
+    FormuleComponent,
+    ReserverComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

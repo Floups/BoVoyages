@@ -1,0 +1,21 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="clientForm">
+    
+    <div formArrayName="voyageurs">
+        <div *ngFor="let voyageur of voyageurs.controls;let i = index">
+            <div [formGroupName]="i">
+                <label>Civilité </label><input type="text" formControlName="civilite" />
+                <label>Prénom </label><input type="text" formControlName="prenom" />
+                <label>Nom </label><input type="text" formControlName="nom" />
+                <label>Date de naissance </label><input type="date" formControlName="date_naissance" /> 
+                <label>Adresse </label><input type="text" formControlName="adresse" /> 
+                <label>Numéro de téléphone </label><input type="text" formControlName="numTel" /> 
+                <button type="button" (click)="remove(i)">Supprimer</button>
+            </div>
+            
+        </div>
+    </div>
+
+     <button type="button" (click)="addVoyageur()">Ajouter un voyageur</button>
+
+    <button type="submit" [disabled]="clientForm.invalid">Envoyer</button>
+</form>

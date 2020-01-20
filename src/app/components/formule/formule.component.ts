@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FormuleService } from 'src/app/shared/formule.service';
 
 @Component({
   selector: 'app-formule',
@@ -8,9 +9,21 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FormuleComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+
+public formule;
+
+  constructor(private activatedRoute: ActivatedRoute, private formuleService: FormuleService) { }
 
   ngOnInit() {
+    this.activatedRoute.paramMap.subscribe(
+      ( params ) => { 
+        
+        const idformule = params.get('id');
+        this.formuleService.getFormule(idformule).subscribe(
+          (formule) => this.formule = formule
+        );        
+      }
+    )
   }
 
 }
