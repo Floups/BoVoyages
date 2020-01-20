@@ -18,7 +18,7 @@ import { FormuleComponent } from './components/formule/formule.component';
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
     FormulesListeComponent,
     FormuleComponent
   ],

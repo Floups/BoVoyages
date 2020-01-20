@@ -25,5 +25,8 @@
         <a class="nav-link" routerLink="new-album">Nouvel Album</a>
       </li>
     </ul>
+    <div *ngIf="isLog()" class="d-flex flex-row justify-content-end">
+      <button class="btn btn-info" (click)="logout()">Logout</button>
+    </div>
   </div>
 </nav>

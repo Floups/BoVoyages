@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { FormulesListeComponent } from './components/formules-liste/formules-liste.component';
-import { FormuleComponent } from './components/formule/formule.component';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {FormulesListeComponent} from './components/formules-liste/formules-liste.component';
+import {FormuleComponent} from './components/formule/formule.component';
+import {LoginComponent} from './components/login/login.component';
 
 
 const routes: Routes = [
   {path: 'listeFormule', component: FormulesListeComponent},
   {path: 'formule/:id', component: FormuleComponent},
-
-
-  { path: '**', redirectTo: 'listeFormule' }
+  {path: 'login', component: LoginComponent},
+  {path: '**', redirectTo: 'listeFormule'}
 
 ];
 
