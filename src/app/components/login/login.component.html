@@ -1,0 +1,17 @@
+<div *ngIf="!isLog()" class="col" style="height: 80%">
+  <form>
+    <div style="width:50%;margin: auto;">
+      <label>mail</label>
+      <input class="form-control" name="mail" type="text" [(ngModel)]="mail"/>
+    </div>
+    <div style="width:50%;margin: auto;">
+      <label>password</label>
+      <input class="form-control" name="password" type="password" [(ngModel)]="password"/>
+    </div>
+    <div style="width:50%;margin: auto;">
+      <button class="btn btn-info" style="margin-top: 5%; width: 100%" (click)="login()">Login</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="isLog()"><p>Vous êtes connecté : <a routerLink="/album">aller à la liste des albums</a></p></div>

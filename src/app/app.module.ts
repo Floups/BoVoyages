@@ -9,6 +9,8 @@ import { InMemoryDataService } from './shared/in-memory-data.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormulesListeComponent } from './components/formules-liste/formules-liste.component';
+import { LoginComponent } from './components/login/login.component';
+import {FormsModule} from '@angular/forms';
 import { FormuleComponent } from './components/formule/formule.component';
 
 @NgModule({
@@ -16,6 +18,7 @@ import { FormuleComponent } from './components/formule/formule.component';
     AppComponent,
     NavbarComponent,
     FooterComponent,
+    LoginComponent
     FormulesListeComponent,
     FormuleComponent
   ],
@@ -23,7 +26,8 @@ import { FormuleComponent } from './components/formule/formule.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService)
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
