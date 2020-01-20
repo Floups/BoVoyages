@@ -1,1 +1,11 @@
-<p>formule works!</p>
+
+<div class="container">
+    <img [src]="'assets/'+formule.destination.images[0]" alt="Card image cap">
+<h1>{{formule.destination.region}}</h1>
+<h2>Du {{formule.date_depart | date: 'dd/MM/yyyy'}} au {{formule.date_retour | date: 'dd/MM/yyyy' }}</h2> 
+<h3>{{formule.destination.description}}</h3>
+<h4> pour {{formule.prix_ht}} € par personne (hors-taxe)</h4>
+<a [routerLink]="['/reserver', formule.id]" class="btn btn-primary">Réserver</a>
+</div>
+
+

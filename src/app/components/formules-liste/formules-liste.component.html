@@ -3,8 +3,10 @@
     <img class="card-img-top" [src]="'assets/'+formule.destination.images[0]" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{formule.destination.region}}</h5>
+      <h6>Du {{formule.date_depart | date: 'dd/MM/yyyy'}} au {{formule.date_retour | date: 'dd/MM/yyyy' }}</h6>
       <p class="card-text">{{formule.destination.description}}</p>
-      <a [routerLink]="['/formule', formules.id]" class="btn btn-primary">Voir l'offre</a>
+      <h6> pour {{formule.prix_ht}} € par personne (hors-taxe)</h6>
+      <a [routerLink]="['/formule', formule.id]" class="btn btn-primary">Voir l'offre</a>
     </div>
   </div>
 </div>
