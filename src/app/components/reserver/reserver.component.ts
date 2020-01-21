@@ -92,7 +92,7 @@ export class ReserverComponent implements OnInit {
       dossier.voyageurs = this.voyageurs.value;
       this.dossierService.createDossier(dossier)
         .subscribe(
-          () => this.router.navigate(['/paiement'])
+          (d) => this.router.navigate(['/paiement/' + d.id])
         );
 
     }

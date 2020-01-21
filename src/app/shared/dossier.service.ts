@@ -16,11 +16,11 @@ export class DossierService {
   }
 
   getDossier(id): Observable<Dossier> {
-    return this.httpClient.get<Dossier>('api/dossiers' + id);
+    return this.httpClient.get<Dossier>('api/dossiers/' + id);
   }
 
   createDossier(dossier) {
-    return this.httpClient.post('api/dossiers', dossier);
+    return this.httpClient.post<Dossier>('api/dossiers', dossier);
   }
 
   deleteDossier(id) {

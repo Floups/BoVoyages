@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormArray } from '@angular/forms';
-import { DossierService } from 'src/app/shared/dossier.service';
-import { Router } from '@angular/router';
-import { Dossier } from 'src/app/models/Dossier';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormControl, FormArray, Validators} from '@angular/forms';
+import {DossierService} from 'src/app/shared/dossier.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Dossier} from 'src/app/models/Dossier';
+import {CustomValidators} from 'ng2-validation';
 
 @Component({
   selector: 'app-paiement',
@@ -12,54 +13,43 @@ import { Dossier } from 'src/app/models/Dossier';
 export class PaiementComponent implements OnInit {
 
 
-  CBForm: FormGroup;
+  cbForm: FormGroup;
+  dossier: Dossier;
 
-  constructor(private router: Router, private dossierService: DossierService) { }
-
-
-isChecked=false;
-
-changevalue(){
-  if (this.isChecked==false) {
-    this.isChecked=true;   
+  constructor(private router: Router, private dossierService: DossierService, private activatedRoute: ActivatedRoute) {
   }
-  else if (this.isChecked==true) {
-    this.isChecked=false;  
-  }
-  return this.isChecked;
-}
+
 
   ngOnInit() {
-
-    this.CBForm = new FormGroup({
-      civilitenomDetenteur: new FormControl(),
-      numero: new FormControl(),
-      dateValidation: new FormControl(),
-      codeSecret: new FormControl(),
-    })
+    this.cbForm = new FormGroup({
+      carteBancaire: new FormGroup({
+        civilitenomDetenteur: new FormControl('', [Validators.required]),
+        numero: new FormControl('', [Validators.required, Validators.minLength(16), CustomValidators.number]),
+        dateValidation: new FormControl('', [Validators.required, CustomValidators.maxDate(new Date())]),
+        codeSecret: new FormControl('', [Validators.required, Validators.minLength(3), CustomValidators.number]),
+      }),
+      assurance: new FormControl()
+    });
+    this.activatedRoute.paramMap.subscribe(params => {
+      const id = params.get('id');
+      this.dossierService.getDossier(id).subscribe(result => {
+        this.dossier = result;
+      });
+    });
   }
-
-  
-  Validation() {
-    if (this.changevalue()==true) {
-     //
-      
-    }
-    alert('Paiement effectué');
-    this.router.navigate(['/listeFormule'])
-  }
-
-
 
 
   onSubmit() {
-
-    if (this.CBForm.valid) {
-      const dossier = this.CBForm.value;
-      this.dossierService.updateDossier(dossier)
+    if (this.cbForm.valid) {
+      this.dossier.carteBancaire = this.cbForm.value.carteBancaire;
+      if (this.cbForm.value.assurance) {
+        this.dossier.assurance = true;
+      }
+      console.log(this.dossier);
+      this.dossierService.updateDossier(this.dossier)
         .subscribe(
-          () => this.Validation()
-        )
+          () => this.router.navigate(['listeFormule'])
+        );
 
     }
   }
