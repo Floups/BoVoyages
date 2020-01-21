@@ -173,6 +173,8 @@ export class InMemoryDataService implements InMemoryDbService {
       'mm',
       new Date('2000-01-01'),
       'test',
+      'test',
+      't@t.fr',
       'test'
     )];
     const dossiers = [];

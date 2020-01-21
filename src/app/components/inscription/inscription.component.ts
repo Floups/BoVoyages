@@ -25,7 +25,7 @@ export class InscriptionComponent implements OnInit {
       date_naissance: new FormControl('', [Validators.required]),
       adresse: new FormControl('', [Validators.required]),
       numTel: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10), CustomValidators.number]),
-      mail: new FormControl('', [Validators.required, Validators.email]),
+      mail: new FormControl('', [Validators.required, CustomValidators.email]),
       password: new FormControl('', [Validators.required])
     });
   }
