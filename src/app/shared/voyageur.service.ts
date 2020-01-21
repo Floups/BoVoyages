@@ -18,4 +18,8 @@ export class VoyageurService {
   getVoyageur(id): Observable<Voyageur> {
     return this.httpClient.get<Voyageur>('api/voyageurs/' + id);
   }
+
+  createVoyageur(voyageur) {
+    return this.httpClient.post<Voyageur>('api/voyageurs', voyageur);
+  }
 }

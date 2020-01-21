@@ -14,8 +14,3 @@ input.ng-valid{
   background-position: right calc(.375em + .1875rem) center;
   background-size: calc(.75em + .375rem) calc(.75em + .375rem);
 }
-
-p{
-  text-align: center;
-  font-size: 25px;
-}

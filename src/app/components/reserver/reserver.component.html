@@ -1,24 +1,43 @@
-<form class="form-group d-flex flex-column" (ngSubmit)="onSubmit()" [formGroup]="DossierForm" style="margin-bottom: 8%">
-  <div style="width: 40%; margin: auto">
-    <div formArrayName="voyageurs">
-      <div *ngFor="let voyageur of voyageurs.controls;let i = index">
-        <div [formGroupName]="i" class="card">
-          <div class="card-body">
-            <label>Civilité </label><input type="text" class="form-control" formControlName="civilite"/>
-            <label>Prénom </label><input type="text" class="form-control" formControlName="prenom"/>
-            <label>Nom </label><input type="text" class="form-control" formControlName="nom"/>
-            <label>Date de naissance </label><input type="date" class="form-control" formControlName="date_naissance"/>
-            <label>Adresse </label><input type="text" class="form-control" formControlName="adresse"/>
-            <label>Numéro de téléphone </label><input type="text" class="form-control" formControlName="numTel"/>
+<p>Voyagez-vous accompagnez ?</p>
+<div *ngIf="formule">
+  <form class="form-group d-flex flex-column" (ngSubmit)="onSubmit()" [formGroup]="DossierForm"
+        style="margin-bottom: 8%">
+    <div style="width: 40%; margin: auto">
+      <div formArrayName="voyageurs">
+        <div *ngFor="let voyageur of voyageurs.controls;let i = index">
+          <div [formGroupName]="i" class="card">
+            <div class="card-body">
+              <label>Civilité </label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="check1" value="H" formControlName="civilite"/>
+                  <label class="form-check-label" for="check1">M</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input type="radio" class="form-check-input" id="check2" value="F" formControlName="civilite"/>
+                  <label class="form-check-label" for="check2">F</label>
+                </div>
+              </div>
+              <label>Prénom </label><input type="text" class="form-control" formControlName="prenom"/>
+              <label>Nom </label><input type="text" class="form-control" formControlName="nom"/>
+              <label>Date de naissance </label><input type="date" class="form-control"
+                                                      formControlName="date_naissance"/>
+              <label>Adresse </label><input type="text" class="form-control" formControlName="adresse"/>
+              <label>Numéro de téléphone </label><input type="text" class="form-control" formControlName="numTel"
+                                                        maxlength="10"/>
+            </div>
+            <button type="button" class="btn btn-danger" (click)="remove(i)">Supprimer</button>
           </div>
-          <button type="button" class="btn btn-danger" (click)="remove(i)">Supprimer</button>
         </div>
-
       </div>
+
+      <button *ngIf="voyageurs.controls.length<formule.nb_places-1" type="button" class="btn btn-light w-100"
+              style="margin-top:5% " (click)="addVoyageur()">Ajouter un
+        voyageur
+      </button>
+
+      <button type="submit" style="margin-top:5%" class="btn btn-info w-100" [disabled]="DossierForm.invalid">Envoyer
+      </button>
     </div>
-
-    <button type="button" class="btn btn-light w-100" style="margin-top:5% " (click)="addVoyageur()">Ajouter un voyageur</button>
-
-    <button type="submit" style="margin-top:5%" class="btn btn-info w-100" [disabled]="DossierForm.invalid">Envoyer</button>
-  </div>
-</form>
+  </form>
+</div>

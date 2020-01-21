@@ -1,0 +1,28 @@
+<form class="form-group d-flex flex-column" (ngSubmit)="onSubmit()" [formGroup]="inscriptionForm"
+      style="margin-bottom: 8%">
+  <div style="width: 40%; margin: auto">
+
+    <label>Civilité </label>
+    <div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="check1" value="H" formControlName="civilite"/>
+        <label class="form-check-label" for="check1">M</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" id="check2" value="F" formControlName="civilite"/>
+        <label class="form-check-label" for="check2">F</label>
+      </div>
+    </div>
+    <label>Prénom </label><input type="text" class="form-control" formControlName="prenom"/>
+    <label>Nom </label><input type="text" class="form-control" formControlName="nom"/>
+    <label>Date de naissance </label><input type="date" class="form-control"
+                                            formControlName="date_naissance"/>
+    <label>Adresse </label><input type="text" class="form-control" formControlName="adresse"/>
+    <label>Numéro de téléphone </label><input type="text" class="form-control" formControlName="numTel"
+                                              maxlength="10"/>
+    <label>E-mail</label><input type="text" class="form-control" formControlName="mail"/>
+    <label>Mot de passe</label><input type="password" class="form-control" formControlName="password"/>
+    <button type="submit" style="margin-top:5%" class="btn btn-info w-100" [disabled]="inscriptionForm.invalid">Envoyer
+    </button>
+  </div>
+</form>

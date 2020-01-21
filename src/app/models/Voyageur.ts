@@ -1,5 +1,5 @@
 export class Voyageur {
-  id: string;
+  id: number;
   civilite: string;
   nom: string;
   prenom: string;
@@ -11,7 +11,7 @@ export class Voyageur {
   mail: string;
 
   // tslint:disable-next-line:variable-name
-  constructor(id: string, civilite: string, nom: string, prenom: string, date_naissance: Date, adresse: string, numTel: string,
+  constructor(id: number, civilite: string, nom: string, prenom: string, date_naissance: Date, adresse: string, numTel: string,
               password: string = null, mail: string = null) {
     this.id = id;
     this.civilite = civilite;
