@@ -12,12 +12,12 @@ export class AuthService {
   constructor(private voyageurService: VoyageurService, private router: Router) {
   }
 
-  authentify(n, p) {
+  authentify(mail, password) {
     this.voyageurService.getVoyageurs().subscribe(tab => tab.forEach(e => {
-        this.isAuth = e.mail === n && e.password === p;
+        this.isAuth = e.mail === mail && e.password === password;
         if (this.isAuth) {
           this.id = e.id;
-          this.router.navigate(['album']);
+          this.router.navigate(['listeFormule']);
         }
       }
     ));

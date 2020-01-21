@@ -43,7 +43,7 @@ export class ReserverComponent implements OnInit {
         civilite: new FormControl('', [Validators.required]),
         nom: new FormControl('', [Validators.required]),
         prenom: new FormControl('', [Validators.required]),
-        date_naissance: new FormControl('', [Validators.required]),
+        date_naissance: new FormControl('', [Validators.required, CustomValidators.maxDate(new Date())]),
         adresse: new FormControl('', [Validators.required]),
         numTel: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10), CustomValidators.number]),
 
