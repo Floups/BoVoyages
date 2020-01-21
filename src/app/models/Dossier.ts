@@ -12,7 +12,7 @@ export class Dossier {
   carteBancaire: CarteBancaire;
 
 
-  constructor(numDossier: number, client: Voyageur, voyageurs: Voyageur[], carteBancaire: string, formule: Formule) {
+  constructor(numDossier: number, client: Voyageur, voyageurs: Voyageur[], carteBancaire: CarteBancaire, formule: Formule) {
     this.id = Dossier.nbId++;
     this.numDossier = numDossier;
     this.client = client;

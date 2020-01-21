@@ -1,29 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" routerLink="/album">test</a>
+  <a class="navbar-brand" routerLink="/album">BoVoyage</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"></a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/album">Accueil</a>
+      </li>
+       <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/album">Mes réservations</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="/user-liste">Liste users</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="movie-liste">Liste films</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="movie-details">Details film</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="calculatrice">calculatrice</a>
-      </li>
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" routerLink="new-album">Nouvel Album</a>
-      </li>
+        <a class="nav-link" routerLink="/album">Annulation</a>
     </ul>
     <div class="d-flex flex-row justify-content-end">
       <a routerLink="/login" *ngIf="!isLog()"><button class="btn btn-info">Login</button></a>

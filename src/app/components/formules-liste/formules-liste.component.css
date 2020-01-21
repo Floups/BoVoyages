@@ -6,3 +6,26 @@
   padding-top: 2%;
   overflow: auto;
 }
+
+#carouselExampleIndicators {
+
+  width:80%;
+}
+
+
+
+
+.texteIntro{
+font-size: 30px;
+
+text-align: justify;
+}
+
+.titleOffers{
+
+  font-size: 20px;
+    border-bottom: 2px solid grey;
+  
+  
+
+}
