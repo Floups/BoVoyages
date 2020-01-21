@@ -66,7 +66,7 @@ export class ReserverComponent implements OnInit {
       this.client = result;
     });
   }
-
+//on calcule l'âge et applique le prix en fonction
   onSubmit() {
     if (this.DossierForm.valid) {
       let prix = 0;
@@ -88,7 +88,8 @@ export class ReserverComponent implements OnInit {
           prix += +this.formule.prix_ht * 0.4;
         }
       });
-      const dossier = new Dossier(50, this.client, [], null, this.formule, prix, false);
+      //création d'un nouveau dossier
+      const dossier = new Dossier(Math.floor(Math.random()*Math.floor(50000)), this.client, [], null, this.formule, prix, false);
       dossier.voyageurs = this.voyageurs.value;
       this.dossierService.createDossier(dossier)
         .subscribe(
