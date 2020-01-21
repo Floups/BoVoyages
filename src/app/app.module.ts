@@ -15,6 +15,7 @@ import { FormuleComponent } from './components/formule/formule.component';
 import { ReserverComponent } from './components/reserver/reserver.component';
 import { PaiementComponent } from './components/paiement/paiement.component';
 import { InscriptionComponent } from './components/inscription/inscription.component';
+import { ReservationsEnCoursComponent } from './components/reservations-en-cours/reservations-en-cours.component';
 
 @NgModule({
   declarations: [

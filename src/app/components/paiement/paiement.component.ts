@@ -25,7 +25,7 @@ export class PaiementComponent implements OnInit {
       carteBancaire: new FormGroup({
         civilitenomDetenteur: new FormControl('', [Validators.required]),
         numero: new FormControl('', [Validators.required, Validators.minLength(16), CustomValidators.number]),
-        dateValidation: new FormControl('', [Validators.required, CustomValidators.maxDate(new Date())]),
+        dateValidation: new FormControl('', [Validators.required, CustomValidators.minDate(new Date())]),
         codeSecret: new FormControl('', [Validators.required, Validators.minLength(3), CustomValidators.number]),
       }),
       assurance: new FormControl()
