@@ -1,0 +1,33 @@
+#container{
+
+ 
+    margin-bottom: 20px;
+}
+
+
+img{
+    display: flex;
+ justify-content: center;
+ border: 3px groove cyan;
+ width: 300px;
+ margin: auto;    
+ margin-top: 100px;
+}
+
+h1, h2, h3, h4{
+    text-align: center;
+}
+
+
+h4{
+
+    margin-bottom: 50px;
+}
+
+a{
+
+    display: flex;
+    justify-content: center;
+
+   margin: auto;  
+}

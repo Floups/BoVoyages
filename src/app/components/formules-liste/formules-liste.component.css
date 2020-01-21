@@ -12,18 +12,28 @@
   width:80%;
 }
 
+.details{
+  font-size: 10px;
+  text-align: end;
 
+}
 
 
 .texteIntro{
-font-size: 30px;
+font-size: 40px;
 
 text-align: justify;
 }
 
-.titleOffers{
-
+.promo{
   font-size: 20px;
+  
+  text-align: justify;
+  }
+
+.titleOffers{
+margin-top: 80px;
+  font-size: 30px;
     border-bottom: 2px solid grey;
   
   

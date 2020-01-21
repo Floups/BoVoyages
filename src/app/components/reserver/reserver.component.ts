@@ -97,7 +97,7 @@ export class ReserverComponent implements OnInit {
           prix += +this.formule.prix_ht * 0.4;
         }
       });
-      const dossier = new Dossier(50, this.client, [], null, this.formule, prix);
+      const dossier = new Dossier(50, this.client, [], null, this.formule, prix, false);
       dossier.voyageurs = this.DossierForm.value.voyageurs;
       this.dossierService.createDossier(dossier)
         .subscribe(

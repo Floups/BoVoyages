@@ -5,6 +5,7 @@ import {FormuleComponent} from './components/formule/formule.component';
 import {LoginComponent} from './components/login/login.component';
 import { ReserverComponent } from './components/reserver/reserver.component';
 import { PaiementComponent } from './components/paiement/paiement.component';
+import { ReservationsEnCoursComponent } from './components/reservations-en-cours/reservations-en-cours.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'paiement/:id', component: PaiementComponent},
   {path: 'reserver/:id', component: ReserverComponent},
+  {path: 'mesReservations', component: ReservationsEnCoursComponent},
+
   {path: '**', redirectTo: 'listeFormule'}
 
 
