@@ -16,6 +16,7 @@
         <a class="nav-link" routerLink="/album">Annulation</a>
     </ul>
     <div class="d-flex flex-row justify-content-end">
+      <a routerLink="/inscription" *ngIf="!isLog()"><button class="btn btn-info mr-2">Inscription</button></a>
       <a routerLink="/login" *ngIf="!isLog()"><button class="btn btn-info">Login</button></a>
       <button class="btn btn-info" (click)="logout()" *ngIf="isLog()">Logout</button>
     </div>
