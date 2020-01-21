@@ -43,7 +43,8 @@
 <p class="titleOffers">Nos offres</p>
 <div class="container-fluid" style="margin-bottom: 8%">
   <div class="card" style="width: 18rem;" *ngFor="let formule of formules">
-    <img class="card-img-top" [src]="'assets/'+formule.destination.images[0]" alt="Card image cap">
+    <img class="card-img-top" *ngIf="formule.destination.images[0]" [src]="'assets/'+formule.destination.images[0]" alt="Card image cap">
+    <img class="card-img-top" *ngIf="!formule.destination.images[0]" src="assets/no_image.png" alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{formule.destination.region}}</h5>
       <h6>Du {{formule.date_depart | date: 'dd/MM/yyyy'}} au {{formule.date_retour | date: 'dd/MM/yyyy' }}</h6>
