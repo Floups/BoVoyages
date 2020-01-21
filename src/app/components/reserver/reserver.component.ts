@@ -9,6 +9,7 @@ import {VoyageurService} from '../../shared/voyageur.service';
 import {Formule} from '../../models/Formule';
 import {AuthService} from '../../shared/auth.service';
 import * as moment from 'moment';
+import {CustomValidators} from 'ng2-validation';
 
 @Component({
   selector: 'app-reserver',
@@ -44,7 +45,7 @@ export class ReserverComponent implements OnInit {
         prenom: new FormControl('', [Validators.required]),
         date_naissance: new FormControl('', [Validators.required]),
         adresse: new FormControl('', [Validators.required]),
-        numTel: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
+        numTel: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10), CustomValidators.number]),
 
       })
     );
@@ -53,17 +54,7 @@ export class ReserverComponent implements OnInit {
   ngOnInit() {
 
     this.DossierForm = new FormGroup({
-      voyageurs: new FormArray([
-        new FormGroup({
-          civilite: new FormControl('', [Validators.required]),
-          nom: new FormControl('', [Validators.required]),
-          prenom: new FormControl('', [Validators.required]),
-          date_naissance: new FormControl('', [Validators.required]),
-          adresse: new FormControl('', [Validators.required]),
-          numTel: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
-
-        })
-      ])
+      voyageurs: new FormArray([])
     });
     this.activatedRoute.paramMap.subscribe(params => {
       const id = params.get('id');
@@ -98,7 +89,8 @@ export class ReserverComponent implements OnInit {
         }
       });
       const dossier = new Dossier(50, this.client, [], null, this.formule, prix);
-      dossier.voyageurs = this.DossierForm.value.voyageurs;
+      dossier.voyageurs = this.voyageurs.value;
+      console.log(dossier);
       this.dossierService.createDossier(dossier)
         .subscribe(
           () => this.router.navigate(['/paiement'])
