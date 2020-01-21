@@ -26,7 +26,7 @@ import { InscriptionComponent } from './components/inscription/inscription.compo
     FormulesListeComponent,
     FormuleComponent,
     ReserverComponent,
-    ReservationsEnCoursComponent
+    ReservationsEnCoursComponent,
     PaiementComponent,
     InscriptionComponent
   ],

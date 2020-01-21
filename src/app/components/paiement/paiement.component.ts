@@ -56,7 +56,7 @@ changevalue(){
 
     if (this.CBForm.valid) {
       const dossier = this.CBForm.value;
-      this.dossierService.updateDossier(1, dossier)
+      this.dossierService.updateDossier(dossier)
         .subscribe(
           () => this.Validation()
         )

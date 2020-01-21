@@ -1,0 +1,13 @@
+<p>Mes réservations</p>
+
+<div class="container-fluid" style="margin-bottom: 8%">
+  <div class="card" style="width: 18rem;" *ngFor="let dossier of dossiers">
+        <div class="card-body">
+            <h5 class="card-title">{{dossier.formule.destination.region}}</h5>
+      <h6>Du {{dossier.formule.date_depart | date: 'dd/MM/yyyy'}} au {{dossier.formule.date_retour | date: 'dd/MM/yyyy' }}</h6>
+      <h6> Prix : {{dossier.prix}} €</h6>
+      <button class="btn btn-outline-success my-2 my-sm-0" *ngIf="dossier.assurance==true">Annulation et Remboursement</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" *ngIf="dossier.assurance==false">Annulation</button>
+    </div>
+  </div>
+</div>
