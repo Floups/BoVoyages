@@ -8,6 +8,7 @@ import {Voyageur} from '../../models/Voyageur';
 import {VoyageurService} from '../../shared/voyageur.service';
 import {Formule} from '../../models/Formule';
 import {AuthService} from '../../shared/auth.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-reserver',
@@ -76,16 +77,33 @@ export class ReserverComponent implements OnInit {
   }
 
   onSubmit() {
-
     if (this.DossierForm.valid) {
-      const dossier = new Dossier(50, this.client, [], null, this.formule);
+      let prix = 0;
+      let date = moment(this.client.date_naissance);
+      let age = moment().subtract(date.year(), 'year');
+      age.subtract(date.month(), 'month');
+      if (age.year() > 12) {
+        prix += +this.formule.prix_ht;
+      } else {
+        prix += +this.formule.prix_ht * 0.4;
+      }
+      this.DossierForm.value.voyageurs.forEach(e => {
+        date = moment(e.date_naissance);
+        age = moment().subtract(date.year(), 'year');
+        age.subtract(date.month(), 'month');
+        if (age.year() > 12) {
+          prix += +this.formule.prix_ht;
+        } else {
+          prix += +this.formule.prix_ht * 0.4;
+        }
+      });
+      const dossier = new Dossier(50, this.client, [], null, this.formule, prix);
       dossier.voyageurs = this.DossierForm.value.voyageurs;
-      console.log(dossier);
       this.dossierService.createDossier(dossier)
         .subscribe(
           () => this.router.navigate(['/paiement'])
         );
-      
+
     }
   }
 
